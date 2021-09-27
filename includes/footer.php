@@ -16,7 +16,8 @@
       $( function() {
         $( "#dob" ).datepicker({
           changeMonth: true,
-          changeYear: true
+          changeYear: true,
+          yearRange: "-100:+0"
         });
       } );
   </script>

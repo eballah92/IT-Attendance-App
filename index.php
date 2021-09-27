@@ -2,6 +2,7 @@
 
  $title = 'index';
  require_once 'includes/header.php';
+ require_once 'db/conn.php';
  
  ?>
 
@@ -16,7 +17,7 @@
 
 <h1 class="text-center">Registration for IT Conference</h1>
 
-<form method="get" action="success.php">
+<form method="post" action="success.php">
     <div class="form-group">
         <label for="firstname">First Name </label>
         <input type="text" class="form-control" id="firstname" name="firstname">
@@ -27,7 +28,7 @@
     </div>
     <div class="form-group">
         <label for="dob">Date of Birth </label>
-        <input type="text" class="form-control" id="dob" numfmt_parse_currency="dob">
+        <input type="text" class="form-control" id="dob" name="dob" >
 
     <div class="form-group">
     <label for="specialty">Area of Expertise</label>
@@ -47,8 +48,8 @@
     </div>
     <div class="form-group">
         <label for="Phone">Contact Number</label>
-        <input type="text" class="form-control" id="phone" aria-describedby="phoneHelp">
-        <small id="phoneHelp" name="phoneHelp" class="form-text text-muted">We'll never share your contact with anyone else.</small>
+        <input type="text" class="form-control" id="phone" name="phone" aria-describedby="phoneHelp">
+        <small id="phoneHelp"  class="form-text text-muted">We'll never share your contact with anyone else.</small>
     </div>
    
      <button type="submit" name="submit" class="btn btn-primary btn-block">Submit</button>
