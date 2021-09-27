@@ -3,21 +3,19 @@
     $db = 'attendance_db';
     $user = 'root';
     $pass = '';
-    $charset = 'utf8mb4';
+    $dbport = 3306;
+    $charset = 'utf8';
 
-    $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+    $dsn = "mysql:host=$host; dbname=$db;charset=$charset; port=$dbport";
 
     try{
         $pdo = new PDO($dsn, $user, $pass);
         echo 'Hello Database';
 
     } catch(PDOException $e){
-        throw new PDOException ($e->getMessage());
+        throw new PDOException($e->getMessage());
 
     }
-
-
-
 
 
 ?>
