@@ -3,7 +3,7 @@
     $db = 'attendance_db';
     $user = 'root';
     $pass = '';
-    $dbport = 3306;
+    $dbport = 3307;
     $charset = 'utf8';
 
     $dsn = "mysql:host=$host; dbname=$db;charset=$charset; port=$dbport";
