@@ -8,10 +8,11 @@
             $this->db = $conn;   
         }
 
-        public function insert($fname, $lname, $dob, $email, $contact, $specialty){
+        public function insertAttendees($fname, $lname, $dob, $email, $contact, $specialty){
             try {
                 //define sql statement ot be executed./in line with the database name
-                $sql = "INSERT INTO attendee (firstname,lastname,dateofbirth,emailaddress,contactnumber,specialty_id) VALUES (:fname,:lname,:dob,:email,:contact,:specialty)";
+                $sql = "INSERT INTO attendee (firstname,lastname,dateofbirth,emailaddress,contactnumber,specialty_id) 
+                        VALUES (:fname,:lname,:dob,:email,:contact,:specialty)";
                 //prepare the sql statement for execution
 
                 $stmt = $this->db->prepare($sql);
@@ -23,6 +24,7 @@
                 $stmt->bindparam(':email',$email);
                 $stmt->bindparam(':contact',$contact);
                 $stmt->bindparam(':specialty',$specialty);
+                
                 // execute statement
                 $stmt->execute();
                 return true;
