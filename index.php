@@ -15,6 +15,7 @@
      -Email Address
      -Contact Number
  -->
+<br>
 
 <h1 class="text-center">Registration for IT Conference</h1>
 
@@ -30,7 +31,7 @@
     <div class="form-group">
         <label for="dob">Date of Birth </label>
         <input type="text" class="form-control" id="dob" name="dob" >
-        <!-- <p>Format options:<br>
+        <p>Format options:<br>
         <select id="format">
             <option value="mm/dd/yy">Default - mm/dd/yy</option>
             <option value="yy-mm-dd">ISO 8601 - yy-mm-dd</option>
@@ -40,7 +41,7 @@
             <option value="&apos;day&apos; d &apos;of&apos; MM &apos;in the year&apos; yy">With text - &apos;day&apos; d &apos;of&apos; MM &apos;in the year&apos; yy</option>
         </select>
         </p> 
-  -->
+  
 
     <div class="form-group">
     <label for="specialty">Area of Expertise</label>

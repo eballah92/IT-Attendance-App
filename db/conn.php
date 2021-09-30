@@ -10,7 +10,7 @@
 
     try{
         $pdo = new PDO($dsn, $user, $pass);
-        echo "working";
+        //echo "working";
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
     } catch(PDOException $e){

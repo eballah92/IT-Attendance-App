@@ -8,6 +8,10 @@
  $results = $crud->getAttendees();
  
  ?>
+ <br>
+
+ <h5>Note: Only those registered will be eligible to participate in the conference</h5>
+ <br>
 
 <table class="table">
   <thead>
@@ -15,10 +19,8 @@
       <th scope="col">#</th>
       <th scope="col">First Name</th>
       <th scope="col">Last Name</th>
-      <th scope="col">Date of Birth</th>
-      <th scope="col">Email Address</th>
-      <th scope="col">Contact Number</th>
       <th scope="col">Specialty</th>
+      <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -27,10 +29,8 @@
       <th scope="row"><?php echo $r['attendee_id'] ?> </th>
       <td><?php echo $r['firstname'] ?> </td>
       <td><?php echo $r['lastname'] ?> </td>
-      <td><?php echo $r['dateofbirth'] ?> </td>
-      <td><?php echo $r['emailaddress'] ?> </td>
-      <td><?php echo $r['contactnumber'] ?> </td>
       <td><?php echo $r['name'] ?> </td>
+      <td><a href="view.php?id=<?php echo $r['attendee_id'] ?>" class="btn btn-primary">View</a></td>
     </tr>
    <?php  }?>
   </tbody>
