@@ -6,13 +6,18 @@
  
  //Get attendee by id
 
- if(isset($_POST['id'])){
-     $id = $_GET['id'];
-     $result = $crud->getAttendeeDetails($id);
+ if(!isset($_GET['id'])){
+    echo "<h1 class='text-danger'>Please check details and try again</h1>";
+     
  }else{
-     echo "<h1 class='text-danger'>Please check details and try again</h1>";
- }
+    $id = $_GET['id'];
+    $result = $crud->getAttendeeDetails($id);
+ 
+
  ?>
+ <br>
+
+ <br>
 
 <div class="card" style="width: 18rem;">
       <div class="card-body">
@@ -34,6 +39,8 @@
       
       </div>
 </div>
+
+<?php } ?>
 
 
 
