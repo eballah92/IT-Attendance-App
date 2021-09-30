@@ -4,6 +4,7 @@
  require_once 'includes/header.php';
  require_once 'db/conn.php';
  
+ $results = $crud->getSpecialties();
  ?>
 
  <!-- 
@@ -24,20 +25,30 @@
     </div>
     <div class="form-group">
         <label for="lastname">Last Name </label>
-        <input type="text" class="form-control" id="lastname"name="lastname">
+        <input type="text" class="form-control" id="lastname" name="lastname">
     </div>
     <div class="form-group">
         <label for="dob">Date of Birth </label>
         <input type="text" class="form-control" id="dob" name="dob" >
+        <!-- <p>Format options:<br>
+        <select id="format">
+            <option value="mm/dd/yy">Default - mm/dd/yy</option>
+            <option value="yy-mm-dd">ISO 8601 - yy-mm-dd</option>
+            <option value="d M, y">Short - d M, y</option>
+            <option value="d MM, y">Medium - d MM, y</option>
+            <option value="DD, d MM, yy">Full - DD, d MM, yy</option>
+            <option value="&apos;day&apos; d &apos;of&apos; MM &apos;in the year&apos; yy">With text - &apos;day&apos; d &apos;of&apos; MM &apos;in the year&apos; yy</option>
+        </select>
+        </p> 
+  -->
 
     <div class="form-group">
     <label for="specialty">Area of Expertise</label>
     <select class="form-control" id="specialty" name="specialty">
-      <option value="1">Database Admin</option>
-      <option>Software Developer</option>
-      <option>Web Administrator</option>
-      <option>System Administrator</option>
-      <option>Other</option>
+    <?php while($r = $results->fetch(PDO::FETCH_ASSOC)){ ?>
+      <option value="<?php echo $r['specialty_id'] ?>"> <?php echo $r['name']; ?> </option>
+      
+      <?php  }?>
     </select>
     </div>
     </div>
