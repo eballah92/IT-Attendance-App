@@ -9,7 +9,9 @@
     //Print attendee by id back to form for edit
 
     if(!isset($_GET['id'])){
-        echo "<h1 class='text-danger'>Please check details and try again</h1>";
+        //echo "<h1 class='text-danger'>Please check details and try again</h1>";
+        include 'includes/errormessage.php';
+        header("Location: viewrecords.php");
         
     }else{
         $id = $_GET['id'];
@@ -24,15 +26,15 @@
     <input type="hidden" name="id" value="<?php echo $attendee['attendee_id'] ?>" />
     <div class="form-group">
         <label for="firstname">First Name </label>
-        <input type="text" class="form-control" value="<?php echo $attendee['firstname'] ?>" id="firstname" name="firstname">
+        <input required type="text" class="form-control" value="<?php echo $attendee['firstname'] ?>" id="firstname" name="firstname">
     </div>
     <div class="form-group">
         <label for="lastname">Last Name </label>
-        <input type="text" class="form-control" value="<?php echo $attendee['lastname'] ?>"id="lastname" name="lastname">
+        <input required type="text" class="form-control" value="<?php echo $attendee['lastname'] ?>"id="lastname" name="lastname">
     </div>
     <div class="form-group">
         <label for="dob">Date of Birth </label>
-        <input type="text" class="form-control" value="<?php echo $attendee['dateofbirth'] ?>" id="dob" name="dob" >
+        <input required type="text" class="form-control" value="<?php echo $attendee['dateofbirth'] ?>" id="dob" name="dob" >
         <p>Format options:<br>
         <select id="format">
             <option value="mm/dd/yy">Default - mm/dd/yy</option>
@@ -61,7 +63,7 @@
     </div>
     <div class="form-group">
         <label for="Email">Email address</label>
-        <input type="email" class="form-control" value="<?php echo $attendee['emailaddress'] ?>" id="Email" name="Email" aria-describedby="emailHelp">
+        <input required type="email" class="form-control" value="<?php echo $attendee['emailaddress'] ?>" id="Email" name="Email" aria-describedby="emailHelp">
         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
     <div class="form-group">
@@ -72,6 +74,10 @@
    
      <button type="submit" name="submit" class="btn btn-success btn-block">Save changes</button>
     </form>
+
+    <br/>
+        <a href="viewrecords.php" class="btn btn-info">Back to List</a>
+       
 
     <?php } ?>
 

@@ -22,15 +22,15 @@
 <form method="post" action="success.php">
     <div class="form-group">
         <label for="firstname">First Name </label>
-        <input type="text" class="form-control" id="firstname" name="firstname">
+        <input required type="text" class="form-control" id="firstname" name="firstname">
     </div>
     <div class="form-group">
         <label for="lastname">Last Name </label>
-        <input type="text" class="form-control" id="lastname" name="lastname">
+        <input required type="text" class="form-control" id="lastname" name="lastname">
     </div>
     <div class="form-group">
         <label for="dob">Date of Birth </label>
-        <input type="text" class="form-control" id="dob" name="dob" >
+        <input required type="text" class="form-control" id="dob" name="dob" >
         <p>Format options:<br>
         <select id="format">
             <option value="mm/dd/yy">Default - mm/dd/yy</option>
@@ -55,7 +55,7 @@
     </div>
     <div class="form-group">
         <label for="Email">Email address</label>
-        <input type="email" class="form-control" id="Email" name="Email" aria-describedby="emailHelp">
+        <input required type="email" class="form-control" id="Email" name="Email" aria-describedby="emailHelp">
         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
     <div class="form-group">
